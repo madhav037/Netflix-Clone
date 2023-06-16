@@ -1,0 +1,995 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Netflix Font', sans-serif;
+}
+body{
+    background: black;
+    color: white;
+}
+
+/* ---------- Home page header ---------- */
+
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,.9) 0,rgba(0, 0, 0, .1) 60%,rgba(0,0,0,.9)100%),url(../../images/header.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 0 4rem;
+}
+
+.header nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.header nav .logo{
+    width: 148px;
+
+}
+
+.header nav button{
+    border: 0;
+    outline: 0;
+    background: #db0001;
+    color: white;
+    font-size: 1rem;
+    border-radius: .3rem;
+    margin-right: .5rem;
+    cursor: pointer;
+}
+
+.header nav .language{
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid white;
+    padding: .375rem 1rem .375rem 2rem;
+}
+
+.header nav .language img{
+    width: 10px;
+    margin-left: 1rem;
+}
+.header nav .signin{
+    display: inline-flex;
+    align-items: center;
+    padding: .25rem 1rem;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.header nav .signin a{
+    text-decoration: none;
+    color: white;
+}
+
+.header nav .signin:hover{
+    background-color: #821111;
+    transition: .3s ;
+}
+
+/* ---------- Home page content ---------- */
+
+.header .headercontent{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.header .headercontent h1{
+    font-size: 3rem;
+    font-weight: 600;
+    max-width: 1000px;
+}
+
+.header .headercontent h3{
+    font-size: 1.7rem;
+    font-weight: normal;
+    line-height: 5rem;
+}
+
+.header .headercontent p{
+    font-size: 1.2rem;
+}
+
+.header .headercontent .email-signup input{
+    padding: 1rem 1.5rem;
+    padding-right: 10rem;
+    margin-top: 1rem;
+    background-color: rgba(33, 31, 31, .8);
+    border: 1px solid white;
+    border-radius: .4rem;
+    font-size: 1rem;
+    margin-right: .5rem;
+    color: white;   
+}
+
+.header .headercontent .email-signup button{
+    padding: .9rem 1.2rem;
+    margin-top: 1rem;
+    border: none;
+    background-color: rgb(255, 0, 0);
+    border-radius: .4rem;
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.header .headercontent .email-signup button a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+}
+
+/* ---------- Features ---------- */
+
+.features{
+    padding: 3.125rem 12%;
+    font-size: 1.375rem;
+}
+.features .sections{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 3.125rem 0;
+    flex-wrap: wrap;
+    
+}
+
+.features .margin{
+    width: 100%;
+    height: 1px;
+    background-color: rgb(62, 62, 62);
+}
+
+.features .sections .text,.image{
+    flex-basis: 50%;
+    margin-bottom:1.25rem;
+}
+
+.features .sections .image img{
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+
+.features .sections .text h2{
+    font-size: 3.125rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+}
+
+/* ---------- FAQ ---------- */
+
+.faq{
+    padding: .625rem 12%;
+    text-align: center;
+    font-size: 20px;
+}
+
+.faq h2{
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+.accordian{
+    margin: 3.75rem auto;
+    width: 100%;
+    max-width: 750px;
+}
+
+.accordian li{
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+    transform: scaleX(1.15);
+}
+
+.accordian li label{
+    display: flex;
+    align-items: center;
+    padding: 35px 5rem 35px 20px;
+    font-size: 25px;
+    font-weight: 500;
+    background-color: #303030;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+}
+.accordian li label::after{
+    content: '+';
+    font-size: 34px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.5s;
+}
+input[type="radio"]{
+    display: none;
+}
+
+.accordian .content{
+    background-color: #303030;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0;
+    transition: max-height 0.5s,padding .5s;
+    overflow: hidden;
+}
+
+.accordian input[type="radio"]:checked + label + .content{
+    max-height: 600px;
+    padding: 30px 20px;
+}
+
+.accordian input[type="radio"]:checked + label::after{
+    transform: rotate(135deg);
+}
+
+.faq p{
+    font-size: 1.2rem;
+}
+
+.faq .email-signup input{
+    padding: 1rem 1.5rem;
+    padding-right: 10rem;
+    margin-top: 1rem;
+    background-color: rgba(33, 31, 31, .8);
+    border: 1px solid white;
+    border-radius: .4rem;
+    font-size: 1rem;
+    margin-right: .5rem;
+    color: white;   
+}
+
+.faq .email-signup button{
+    padding: 1rem 1.5rem;
+    margin-top: 1rem;
+    border: none;
+    background-color: rgb(255, 0, 0);
+    border-radius: .4rem;
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    margin-bottom: 5rem;
+}
+
+.faq .email-signup button a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+}
+
+/* ---------- Footer ---------- */
+
+.footer{
+    padding: 60px 15% 10px;
+    border-top: 6px solid #333;
+    color: #8d8c8c;
+}
+
+.footer h2{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.footer .col{
+    flex-basis: 25%;
+    flex-grow: 1;
+    margin-bottom: 20px;  
+    display: inline-block;
+    margin-right: 10rem;
+}
+
+.footer .col a{
+    
+    display: block;  
+    text-decoration:underline;
+    color: #8d8c8c;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.footer .row{
+    align-items: center;
+    padding: 10px 0;
+}
+
+.footer button{
+    border: 0;
+    outline: 0;
+    background: #db0001;
+    color: white;
+    font-size: 1rem;
+    border-radius: .3rem;
+    margin-right: .5rem;
+    cursor: pointer;
+}
+
+.footer .language{
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid white;
+    padding: .375rem 1rem .375rem 2rem;
+}
+
+.footer .language img{
+    width: 10px;
+    margin-left: 1rem;
+}
+.footer .copyright-text{
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+/* ---------- Sign In Page ---------- */
+
+.signin-header{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,.5) 0,rgba(0, 0, 0, .5) 60%,rgba(0,0,0,.5)100%),url(../../images/header.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 0 4rem;
+    
+}
+
+.signin-header nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    display: flex;
+}
+
+.signin-header nav .logo{
+    width: 148px;
+
+}
+
+/* ---------- Sign In Content ---------- */
+
+.signin-headercontent{
+    background-color: rgba(0, 0, 0, .75);
+    padding: 50px 0px 40px 50px;
+    margin: 20px 0px -256px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.signin-headercontent h1{
+    margin-bottom: 28px;
+}
+
+.signin-headercontent .signin-form input[type="email"]{
+    display: inline-flex;
+    padding: 16px 20px 10px;
+    width: 90%;
+    position: relative;
+    background-color: #333333;
+    border: 0;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 18px;
+}
+
+.signin-headercontent .signin-form input[type="password"]{
+    display: inline-flex;
+    padding: 16px 20px 10px;
+    width: 90%;
+    position: relative;
+    background-color: #333333;
+    border: 0;
+    border-radius: 4px;
+    color: white;
+    font-size: 18px;
+}
+
+.signin-headercontent .signin-form button{
+    display: block;
+    padding: 16px;
+    margin: 40px 0 12px;
+    border-radius: 4px;
+    border: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #e50914;
+    width: 90%;
+}
+
+.signin-headercontent .signin-form .other-input{
+    margin-bottom: 68px;
+}
+
+.signin-headercontent .signin-form .other-input input[type="checkbox"] + label{
+    color: #f3f3f3;
+    display: inline-block;
+    line-height: 1.2;
+    padding: 0 0 2px;
+    padding-right: 50px;
+    position: relative;
+}
+
+.signin-headercontent .signin-form .other-input input[type="checkbox"]{
+    height: 16px;
+    width: 16px;
+
+}
+
+.signin-headercontent .signin-form .other-input a{
+    color: #f3f3f3;
+    text-decoration: none;
+    position: absolute;
+    right:65px ;
+}
+
+.signin-headercontent .signin-form .other-input a:hover{
+    text-decoration: underline;
+}
+
+.signin-headercontent .signin-form h4{
+    color: #8d8c8c;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.signin-headercontent .signin-form h4 a{
+    text-decoration: none;
+    color: white;
+
+}
+
+.signin-headercontent .signin-form h4 a:hover{
+    text-decoration: underline;
+}
+
+.signin-headercontent .signin-form p{
+     color: #8d8c8c;
+    font-weight: 400;
+    margin-bottom: 90px;
+
+}
+
+.signin-headercontent .signin-form p a{
+    text-decoration: none;
+    color: blue;   
+}
+
+.signin-headercontent .signin-form p a:hover{
+    text-decoration: underline;
+}
+
+/* ---------- Sign In Footer ---------- */
+
+.signin-footer{
+    padding: 60px 15% 10px;
+    color: #8d8c8c;
+}
+
+.signin-footer h2{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.signin-footer .col{
+    flex-basis: 25%;
+    flex-grow: 1;
+    margin-bottom: 20px;  
+    display: inline-block;
+    margin-right: 10rem;
+}
+
+.signin-footer .col a{
+    
+    display: block;  
+    text-decoration:underline;
+    color: #8d8c8c;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.signin-footer .row{
+    align-items: center;
+    padding: 10px 0;
+}
+
+.signin-footer button{
+    border: 0;
+    outline: 0;
+    background: #db0001;
+    color: white;
+    font-size: 1rem;
+    border-radius: .3rem;
+    margin-right: .5rem;
+    cursor: pointer;
+}
+
+.signin-footer .language{
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid white;
+    padding: .375rem 1rem .375rem 2rem;
+}
+
+.signin-footer .language img{
+    width: 10px;
+    margin-left: 1rem;
+}
+
+/* ---------- Sign In Step-1 ---------- */
+
+.signin-step-1-header nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    display: flex;
+    margin-left: 3%;
+}
+
+.signin-step-1-header nav .logo{
+    width: 167px;
+}
+
+.signin-step-1-header nav a{
+    text-decoration: none;
+    color: black;
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 3%;
+}
+
+.signin-step-1-header nav a:hover{
+    text-decoration: underline;
+}
+
+.simplecontainer{
+    padding: 0px 0px 90px;
+}
+
+.simplecontainer .centercontainer{
+    margin: 0px auto 15px;
+    padding: 20px 32px 60px;
+    max-width: 450px;
+}
+
+.simplecontainer .centercontainer .centercontainer-image{
+    width: 260px;
+    height: 210px;
+}
+
+.simplecontainer .centercontainer .centercontainer-content{
+    text-align: center;
+}
+
+.simplecontainer .centercontainer .centercontainer-content h6{
+    font-size: 13px;
+    font-weight: 500;
+}
+.simplecontainer .centercontainer .centercontainer-content h6 span{
+    font-weight: 600;
+}
+
+.simplecontainer .centercontainer .centercontainer-content h2{
+    font-size: 32px;
+    margin: 0 0 13px;
+}
+.simplecontainer .centercontainer .centercontainer-content p{
+    font-size: 18px;
+}
+.simplecontainer .centercontainer .centercontainer-content .submit-container{
+    margin-top: 24px;
+}
+
+.simplecontainer .centercontainer .centercontainer-content .submit-container button{
+    border-radius: 4px;
+    font-size: 24px;
+    min-width: 110px;
+    font-weight: 400;
+    min-height: 64px;
+    background: #e50914;
+    width: 100%;
+    color: white;
+    border: 0;
+    outline: 0;
+    padding: 20.5px 48px;
+}
+
+.simplecontainer .centercontainer .centercontainer-content .submit-container button:hover{
+    background: rgb(255, 0, 0);
+    cursor: pointer;
+}
+
+/* ---------- Sign In Footer ---------- */
+
+.signin-step-footer{
+    padding: 60px 10% 10px;
+    color: #737373;
+    background: #dedede;
+}
+
+.signin-step-footer h2{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.signin-step-footer .col{
+    flex-basis: 25%;
+    flex-grow: 1;
+    margin-bottom: 20px;  
+    display: inline-block;
+    margin-right: 10rem;
+}
+
+.signin-step-footer .col a{
+    
+    display: block;  
+    text-decoration:underline;
+    color: #8d8c8c;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.signin-step-footer .row{
+    align-items: center;
+    padding: 10px 0;
+}
+
+.signin-step-footer button{
+    border: 0 solid #737373;
+    outline: 0;
+    background: #db0001;
+    color: #737373;
+    font-size: 1rem;
+    border-radius: .3rem;
+    margin-right: .5rem;
+    cursor: pointer;
+}
+
+.signin-step-footer .language{
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid #737373;
+    padding: .375rem 1rem .375rem 2rem;
+}
+
+.signin-step-footer .language img{
+    width: 10px;
+    margin-left: 1rem;
+}
+
+/* ---------- Sign In Registration Form ---------- */
+
+.simplecontainer1{
+    padding: 50px 0px 90px;
+}
+
+.simplecontainer1 .centercontainer1{
+    margin: 0px auto 15px;
+    padding: 20px 32px 60px;
+    max-width: 500px;
+}
+
+.simplecontainer1 .centercontainer1 .centercontainer1-content{
+    text-align: left;
+}
+
+.simplecontainer1 .centercontainer1 .centercontainer1-content h6{
+    font-size: 13px;
+    font-weight: 500;
+}
+.simplecontainer1 .centercontainer1 .centercontainer1-content h6 span{
+    font-weight: 600;
+}
+
+.simplecontainer1 .centercontainer1 .centercontainer1-content h2{
+    font-size: 32px;
+    margin: 0 0 13px;
+    font-weight: 600;
+    line-height: 45px;
+}
+.simplecontainer1 .centercontainer1 .centercontainer1-content p{
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.simplecontainer1 .centercontainer1 .centercontainer1-content .signin-email{
+    position: relative;
+}
+
+.simplecontainer1 .centercontainer1 .centercontainer1-content .signin-email input{
+   
+    height: 60px;
+    border-radius: 4px;
+    font-size: 18px;
+    padding: 0 16px;
+    border: 1px solid #e50914;
+    outline: none;
+    background: transparent;
+    margin-top: 16px;
+    min-width: 110px;
+    width: 100%;
+}
+
+.simplecontainer1 .centercontainer1 .centercontainer1-content .signin-email label{
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translatey(-25%);
+    font-size:20px;
+    pointer-events: none;
+    transition: .3s;
+    color: #737373;
+}
+
+.simplecontainer1 .centercontainer1 .centercontainer1-content .signin-email input:focus{
+    border: 1px solid black;
+}
+
+.simplecontainer1 .centercontainer1 .centercontainer1-content .signin-email input:focus~label,
+.simplecontainer1 .centercontainer1 .centercontainer1-content .signin-email input:valid~label{
+    top: 35%;
+    left: 16px;
+    font-size: 12px;
+    padding: 0 2px 10px;
+
+}
+
+.simplecontainer1 .centercontainer1 .centercontainer1-content .signin-password{
+    position: relative;
+}
+
+.simplecontainer1 .centercontainer1 .centercontainer1-content .signin-password input{
+   
+    height: 60px;
+    border-radius: 4px;
+    font-size: 18px;
+    padding: 0 16px;
+    border: 1px solid #e50914;
+    outline: none;
+    background: transparent;
+    margin-top: 16px;
+    min-width: 110px;
+    width: 100%;
+}
+
+.simplecontainer1 .centercontainer1 .centercontainer1-content .signin-password label{
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translatey(-25%);
+    font-size:20px;
+    pointer-events: none;
+    transition: .3s;
+    color: #737373;
+}
+
+.simplecontainer1 .centercontainer1 .centercontainer1-content .signin-password input:focus{
+    border: 1px solid black;
+}
+
+.simplecontainer1 .centercontainer1 .centercontainer1-content .signin-password input:focus~label,
+.simplecontainer1 .centercontainer1 .centercontainer1-content .signin-password input:valid~label{
+    top: 35%;
+    left: 16px;
+    font-size: 12px;
+    padding: 0 2px 10px;
+
+}
+
+.simplecontainer1 .centercontainer1 .centercontainer1-content .submit-container1{
+    
+    margin-top: 24px;
+}
+
+.simplecontainer1 .centercontainer1 .centercontainer1-content .submit-container1 button{
+    border-radius: 4px;
+    font-size: 24px;
+    min-width: 110px;
+    font-weight: 400;
+    min-height: 64px;
+    background: #e50914;
+    width: 100%;
+    color: white;
+    border: 0;
+    outline: 0;
+    padding: 20.5px 48px;
+}
+
+.simplecontainer1 .centercontainer1 .centercontainer1-content .submit-container1 button:hover{
+    background: rgb(255, 0, 0);
+    cursor: pointer;
+}
+
+/* ---------- Sign In Page 2 ---------- */
+
+.simplecontainer2{
+    padding: 0px 0px 90px;
+}
+
+.simplecontainer2 .centercontainer2{
+    margin: 0px auto 15px;
+    padding: 20px 32px 60px;
+    max-width: 450px;
+}
+.simplecontainer2 .centercontainer2 .centercontainer2-icon{
+    text-align: center;
+    margin: 131px auto 20px;
+}
+
+.simplecontainer2 .centercontainer2 .centercontainer2-icon i{
+   color: red; 
+   text-align: center; 
+   font-size: 4rem;
+}
+
+
+.simplecontainer2 .centercontainer2 .centercontainer2-content h6{
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+}
+.simplecontainer2 .centercontainer2 .centercontainer2-content h6 span{
+    font-weight: 600;
+}
+
+.simplecontainer2 .centercontainer2 .centercontainer2-content h2{
+    font-size: 32px;
+    margin: 0 0 30px;
+    text-align: center;
+}
+
+.simplecontainer2 .centercontainer2 .centercontainer2-content i{
+    color: #e50914;
+    text-align: left;
+    font-size: 30px;
+    margin: 0 10px 30px 0;
+}
+
+.simplecontainer2 .centercontainer2 .centercontainer2-content p{
+    font-size: 20px;
+    padding-left: 20px;
+    line-height: 20px;  
+    display: inline-block;
+}
+
+
+.simplecontainer2 .centercontainer2 .centercontainer2-content .submit-container{
+    margin-top: 24px;
+}
+
+.simplecontainer2 .centercontainer2 .centercontainer2-content .submit-container button{
+    border-radius: 4px;
+    font-size: 24px;
+    min-width: 110px;
+    font-weight: 400;
+    min-height: 64px;
+    background: #e50914;
+    width: 100%;
+    color: white;
+    border: 0;
+    outline: 0;
+    padding: 20.5px 48px;
+}
+
+.simplecontainer2 .centercontainer2 .centercontainer2-content .submit-container button:hover{
+    background: rgb(255, 0, 0);
+    cursor: pointer;
+}
+
+/* ---------- Plans ---------- */
+
+.plancontainer{
+    padding: 0px 0px 90px;
+}
+
+.plancontainer .plan-center-container{
+    margin: 32px auto 15px;
+    max-width: 940px;
+}
+
+.plancontainer .plan-center-container h6{
+    font-size: 13px;
+    font-weight: 500;
+}
+.plancontainer .plan-center-container h6 span{
+    font-weight: 600;
+}
+
+.plancontainer .plan-center-container h2{
+    font-size: 32px;
+    margin: 0 0 30px;
+}
+
+
+
+.plan-col {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+.plan-row {margin: 0 -5px;}
+
+.plan-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ---------- Responsive columns ---------- */
+@media screen and (max-width: 1025px) {
+  .plan-col {
+    max-width: 540px;
+    width: 100%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 20px;
+  }
+
+  .plancontainer .plan-center-container{
+    margin: 32px auto 15px;
+    max-width: 520px;
+}   
+}
+
+/* Style the counter cards */
+.plan-card {
+    border-radius:15px;
+    border:1px solid rgba(97, 97, 97,0.5);
+  padding: 16px;
+  background-color: #ffffff;
+  height: 250px;
+}
+
+.various-plans .plan-row{
+    max-width: 960px;
+    margin: 40px auto 15px;
+}
+
+.various-plans .plan-row .plan-col .plan-card label{
+    font-size: 20px;
+    padding-top: 30px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.various-plans .plan-row .plan-col .plan-card label::before{
+    content: '+';
+    font-size: 2rem;
+    transition: transform .5s;
+}
+.various-plans .plan-row .plan-col .plan-card input[type="radio"]:checked + label::before{
+    transform: rotate(135deg);
+}
+.various-plans .plan-row .plan-col .plan-card h3{
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #454545;
+    line-height: 30px;
+    padding-bottom: 30px;
+}
+.various-plans .plan-row .plan-col .plan-card i{
+    color: #454545;
+    font-size: 15px;
+}
+.various-plans .plan-row .plan-col .plan-card i span{
+    font-size: 1rem;
+    font-weight: 200;
+    padding-left: 15px;
+}
