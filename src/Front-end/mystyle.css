@@ -1130,3 +1130,96 @@ tr{
     background: rgb(255, 0, 0);
     cursor: pointer;
 }
+
+/* ---------- Netflix Home Page ---------- */
+
+
+.pinning-header{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,.9) 0,rgba(0, 0, 0, .1) 60%,rgba(0,0,0,.9)100%);
+    background-size: cover;
+    background-position: center;
+    padding: 0 4rem;
+}
+
+.pinning-header .pinning-header-container .main-header nav{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 1rem 0;
+}
+
+.pinning-header .pinning-header-container .main-header nav .logo{
+    width: 100px;
+}
+
+.main-header a{
+    text-decoration: none;
+    color: white;
+    padding-left: 1rem;
+}
+
+.main-header .search-area{
+    width: 200px;
+    padding: 5px 0;
+    background-color: rgba(0, 0, 0, .5);
+    border: none;
+    outline: none;
+    overflow: hidden;
+    color: white;
+}
+
+
+
+
+/* ---------------------     Video    ---------------- */
+
+
+#background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+.dropdon-profile{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 170px;
+    right: 50px;
+    transform: translate(0,-50%);
+    background: rgba(0, 0, 0, .8);
+    padding: 25px;
+    visibility: hidden;
+}
+
+.dropdon-profile a{
+    padding: 10px 10px;
+    font-size: 15px;
+}
+.dropdon-profile i{
+    padding-right: 15px;
+    font-size: 15px;
+}
+.dropdon-profile a:hover{
+    text-decoration: underline;
+}
+.dropdon-profile .sign-out-home{
+    text-align: center;
+}
+.dropdown{
+    transition: transform .5s;
+}
+.dropdown:hover{
+    transform: rotate(180deg);
+    
+}
+.dropdown:hover+.dropdon-profile{
+    visibility: visible;
+    
+}
