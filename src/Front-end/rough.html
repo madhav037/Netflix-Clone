@@ -3,31 +3,46 @@
 <head>
   <title>Background Video</title>
   <style>
-    #background-video {
-      position: fixed;
+  #background-video{
+    position:fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       z-index: -1;
-    }
+  }
   </style>
 </head>
 <body>
-  <video id="background-video" plays-inline autoplay loop muted>
-    <source src="../../videos/trailer-1.mp4" type="video/mp4">
-    <!-- Add additional source elements for different video formats if desired -->
-  </video>
+  <video id="background-video" plays-inline autoplay muted></video>
 
-  <!-- Rest of your HTML content -->
-  
-  <script>
-    var video = document.getElementById('background-video');
+</div>
+<script>
+  var videoSources = [
+  ["../../videos/trailer-1.mp4", "video/mp4"],
+  ["../../videos/trailer-2.mp4", "video/mp4"],
+  ["../../videos/trailer-3.mp4", "video/mp4"],
+];
 
-    video.addEventListener('canplaythrough', function() {
-      video.play();
-    }, false);
-  </script>
+var videoElement = document.getElementById("background-video");
+function getRandomIndex(max) {
+  return Math.floor(Math.random() * max);
+}
+function changeVideoSource() {
+  var randomIndex = getRandomIndex(videoSources.length);
+  var source = videoSources[randomIndex][0];
+  var type = videoSources[randomIndex][1];
+
+  videoElement.src = source;
+  videoElement.type = type;
+}
+
+// Example usage
+window.addEventListener("load", changeVideoSource);
+
+ // Change to the first video in the array
+
+</script>
 </body>
 </html>

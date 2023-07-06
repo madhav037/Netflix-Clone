@@ -19,42 +19,88 @@
             <div class="pinning-header-container">
                 <div class="main-header">
                     <nav>
-                        <video id="background-video" plays-inline autoplay muted>
-                            <source src="../../videos/trailer-1.mp4" type="video/mp4">
-                            <!-- Add additional source elements for different video formats if desired -->
-                        </video>
+                        <video id="background-video" plays-inline autoplay muted></video>
 
                         <a href="./Netflix.html"><img src="../../images/logo.png" alt="" class="logo"></a>
-                        <div class="navigation-links">
-                            <a href="./Netflix.html">Home</a>
-                            <a href="./TvShows.html">Tv Shows</a>
-                            <a href="./Movies.html">Movies</a>
-                            <a href="./Popular.html">New & Popular</a>
-                            <a href="./Mylist.html">My List</a>
-                            <a href="./Language.html">Browse by Language</a>
+                        <div class="navigation-links" id="nav-links">
+                            
+                            <a href="./Netflix.html" class="links active">Home</a>
+                            <a href="./TvShows.html" class="links">Tv Shows</a>
+                            <a href="./Movies.html" class="links">Movies</a>
+                            <a href="./Popular.html" class="links">New & Popular</a>
+                            <a href="./Mylist.html" class="links">My List</a>
+                            <a href="./Language.html" class="links">Browse by Language</a>
                         </div>
-
-                        <form action="">
-                            <input type="search" name="search" id="search" class="search-area">
-                            <label for="" class="search-btn">
-                            <i class="fas fa-search" style="color: white; font-size: 15px;"></i></label>
+                        
+                        <div class="search-bar">
+                            <form action="">
+                                <input type="search" name="search" id="search" class="search-area">
+                                <label for="" class="search-btn">
+                                <i class="fas fa-search" style="color: white; font-size: 15px;"></i></label>
                             </form>
-                            <a href="./Children.html">Children</a>
-                            <i class="far fa-bell" style="font-size: 15px;"></i>
-                            <i class="fas fa-caret-down dropdown"></i>
-                        <div class="dropdon-profile">
-                            <a href="#"><i class="fas fa-pen"></i>Manage Profile</a>
-                            <a href="#"><i class="fas fa-theater-masks"></i>Transfer Profile</a>
-                            <a href="#"><i class="far fa-user"></i>Account</a>
-                            <a href="#"><i class="far fa-question-circle"></i>Help Center</a>
-                            <hr>
-                            <a href="#" class="sign-out-home">Sign out of Netflix</a>
+                        </div>    
+                        <div class="other-links">
+                                <a href="./Children.html" class="children">Children</a>
+                                <i class="far fa-bell" style="font-size: 15px;"></i>
+                                <i class="fas fa-caret-down dropdown"></i>
+                            <div class="dropdon-profile">
+                                <a href="#"><i class="fas fa-pen"></i>Manage Profile</a>
+                                <a href="#"><i class="fas fa-theater-masks"></i>Transfer Profile</a>
+                                <a href="#"><i class="far fa-user"></i>Account</a>
+                                <a href="#"><i class="far fa-question-circle"></i>Help Center</a>
+                                <hr>
+                                <a href="#" class="sign-out-home">Sign out of Netflix</a>
+                            </div>
                         </div>
                     </nav>
+
+                    <div class="small-container">
+                        <div class="movie-logo" >
+                            <img src="" alt="" id="change-logo">
+                        </div>
+                    </div>
+                    <div class="video-btns">
+                        <a href=""><button class="play-btn"><i class="fas fa-play"></i>Play</button></a>
+                        <a href=""><button class="info-btn"><i class=" fas fa-circle-info"></i>More Info</button></a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!--  Header Ends  -->
+        <!--  Header Ends  -->      
+        <!-- Change Videos on every load -->
+        <script>
+            var videoSources = [
+            ["../../videos/trailer-1.mp4", "video/mp4","../../images/video-logo-1.png"],
+            ["../../videos/trailer-2.mp4", "video/mp4","../../images/video-logo-2.png"],
+            ["../../videos/trailer-3.mp4", "video/mp4","../../images/video-logo-3.png"],
+            ["../../videos/trailer-4.mp4", "video/mp4","../../images/video-logo-4.png"]
+            ];
+
+            var videoElement = document.getElementById("background-video");
+            var imgElement=document.getElementById("change-logo");
+            function getRandomIndex(max) {
+            return Math.floor(Math.random() * max);
+            }
+            function changeVideoSource() {
+            var randomIndex = getRandomIndex(videoSources.length);
+            var source = videoSources[randomIndex][0];
+            var type = videoSources[randomIndex][1];
+
+            videoElement.src = source;
+            videoElement.type = type;
+
+            var img_source=videoSources[randomIndex][2];
+                imgElement.src=img_source;
+            }
+
+// Example usage
+            window.addEventListener("load", setTimeout(changeVideoSource,1000));
+            
+
+ // Change to the first video in the array
+
+</script>
 </body>
+<script src="mystyle.js"></script>
 </html>

@@ -1137,27 +1137,54 @@ tr{
 .pinning-header{
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,.9) 0,rgba(0, 0, 0, .1) 60%,rgba(0,0,0,.9)100%);
+    background: linear-gradient(rgba(0,0,0,.9) 0,rgba(0, 0, 0, .1) 50%,rgba(0,0,0,.9)100%);
     background-size: cover;
     background-position: center;
-    padding: 0 4rem;
+    padding: 0 2rem;
 }
 
 .pinning-header .pinning-header-container .main-header nav{
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content:flex-start;
     padding: 1rem 0;
 }
-
+@media only screen and (max-width: 880px) {
+    .navigation-links{
+        display: none;
+    }
+    .children{
+        display: none;
+    }
+    #background-video {
+      position:fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      z-index: -1;
+    }
+}
+@media only screen and (max-width: 1100px) and (min-width: 880px){
+    .children{
+        display: none;
+    }
+    .navigation-links{
+        font-size: 14px;
+        transition: .3s ease-in-out;
+    }
+}
 .pinning-header .pinning-header-container .main-header nav .logo{
     width: 100px;
+    padding-right: 10px;
+      
 }
 
 .main-header a{
     text-decoration: none;
     color: white;
-    padding-left: 1rem;
+    padding: 0 10px;
 }
 
 .main-header .search-area{
@@ -1168,8 +1195,17 @@ tr{
     outline: none;
     overflow: hidden;
     color: white;
+    display: none;
+}
+.navigation-links a:hover{
+    color: #818181;
+    font-weight: 500;
+    transition: .3s;
 }
 
+.navigation-links .active{
+    font-weight: 600;
+}
 
 
 
@@ -1177,7 +1213,7 @@ tr{
 
 
 #background-video {
-      position: fixed;
+      position:fixed;
       top: 0;
       left: 0;
       width: 100%;
@@ -1186,25 +1222,28 @@ tr{
       z-index: -1;
     }
 
+
+
+
 .dropdon-profile{
-    display: flex;
-    flex-direction: column;
+    display: none;
     position: absolute;
-    top: 170px;
+    top: 280px;
     right: 50px;
+    min-width: 17   0px;
     transform: translate(0,-50%);
     background: rgba(0, 0, 0, .8);
     padding: 25px;
-    visibility: hidden;
 }
 
 .dropdon-profile a{
     padding: 10px 10px;
     font-size: 15px;
+    display: block;
 }
 .dropdon-profile i{
-    padding-right: 15px;
-    font-size: 15px;
+    padding-right: 10px;
+    font-size: 12px;
 }
 .dropdon-profile a:hover{
     text-decoration: underline;
@@ -1220,6 +1259,143 @@ tr{
     
 }
 .dropdown:hover+.dropdon-profile{
-    visibility: visible;
+    display: block;
     
+}
+
+.main-header .search-bar{
+    position: absolute;
+    right: 15%;
+    transform: translate(-15%);
+}
+.main-header .other-links{
+    position: absolute;
+    right: 1%;
+    transform: translate(-5%);
+}
+.main-header .other-links i{
+    padding: 10px;
+}
+
+@media only screen and (max-width: 2480px) and (min-width: 1920px) {
+    .main-header .search-bar{
+    position: absolute;
+    right: 10%;
+    transform: translate(-15%);
+}
+.main-header .other-links{
+    position: absolute;
+    right: 1%;
+    transform: translate(-5%);
+}
+}
+@media only screen and (max-width: 1919px) and (min-width: 1240px) {
+    .main-header .search-bar{
+    position: absolute;
+    right: 15%;
+    padding-right: 10px;
+}
+.main-header .other-links{
+    position: absolute;
+    right: 5%;
+    transform: translate(10%);
+}
+}
+@media only screen and (max-width: 1100px){
+    .main-header .search-bar{
+    position: absolute;
+    right: 12%;
+    transform: translate(-20%);
+}
+.main-header .other-links{
+    position: absolute;
+    right: 1%;
+    transform: translate(-5%);
+}
+.small-container{
+    position: absolute;
+    top: 100px;
+    position: relative;
+    animation-name: logo-animation1;
+    animation-duration:1s;
+    animation-delay: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    width: 200px;
+
+}
+.small-container #change-logo{
+    width: 100%;
+    
+}
+@keyframes logo-animation1 {
+    from{
+        top: 150px;
+    }
+    to{
+        width: 100px;
+        top: 300px;
+        
+    }
+}
+}
+/* ------ Image Logo */
+
+.small-container{
+    position: absolute;
+    top: 150px;
+    position: relative;
+    animation-name: logo-animation;
+    animation-duration:3s;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    width: 400px;
+    left: 3%;
+
+}
+.small-container #change-logo{
+    width: 100%;
+    
+}
+@keyframes logo-animation {
+    from{
+        top: 150px;
+        width: 400px;
+    }
+    to{
+        width: 300px;
+        top: 300px;
+        
+    }
+}
+
+.video-btns{
+    position: fixed;
+    top: 500px;
+    left: 5%;
+    width: 400px;
+}
+.video-btns .play-btn i{
+    padding: 0px 16px 0 0px;
+}
+.video-btns .play-btn{
+    padding: 10px 5%;
+    font-size: 1.5rem;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+
+}
+.video-btns .info-btn i{
+    padding: 0px 16px 0 0px;
+}
+.video-btns .info-btn{
+    padding: 10px 10%;
+    font-size: 1.5rem;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    background-color: rgba(96, 95, 95, 0.8);
+
 }
