@@ -63,11 +63,55 @@
                         <a href=""><button class="play-btn"><i class="fas fa-play"></i>Play</button></a>
                         <a href=""><button class="info-btn"><i class=" fas fa-circle-info"></i>More Info</button></a>
                     </div>
+
+                    
                 </div>
             </div>
         </div>
 
-        <!--  Header Ends  -->      
+
+        <div class="container-1">
+  <button type="button" id="moveLeft" class="btn-nav">
+    ᐊ
+  </button>
+  <div class="container-indicators">
+    <div class="indicator active" data-index=0></div>
+    <div class="indicator" data-index=1></div>
+    <div class="indicator" data-index=2></div>
+  </div>
+  <div class="slider" id="mySlider">
+    <div class="movie" id="movie0">
+      <img src="movie1.jpg" alt="" srcset="" />
+      <div class="description">
+        <div class="description__buttons-container">
+          <div class="description__button"><i class="fas fa-play"></i></div>
+          <div class="description__button"><i class="fas fa-plus"></i></div>
+          <div class="description__button"><i class="fas fa-thumbs-up"></i></div>
+          <div class="description__button"><i class="fas fa-thumbs-down"></i></div>
+          <div class="description__button"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="description__text-container">
+          <span class="description__match">97% Match</span>
+          <span class="description__rating">TV-14</span>
+          <span class="description__length">2h 11m</span>
+          <br><br>
+          <span>Explosive</span>
+          <span>&middot;</span>
+          <span>Exciting</span>
+          <span>&middot;</span>
+          <span>Family</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" id="moveRight" class="btn-nav">
+    ᐅ
+  </button>
+</div>
+
+        <!--  Header Ends  -->     
+        
+        
         <!-- Change Videos on every load -->
         <script>
             var videoSources = [
@@ -99,6 +143,7 @@
             
 
  // Change to the first video in the array
+
 
 </script>
 </body>
