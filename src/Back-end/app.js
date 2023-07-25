@@ -6,6 +6,7 @@ const database = require('./database');
 
 const app = express();
 const port = 7000;
+let lastMail = ''
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../Front-end')));
@@ -88,6 +89,7 @@ app.get('/sigin-regform', function (req, res) {
 app.post('/sigin-regform', async (req, res) => {
     console.log("hello3");
     const email = req.body.emailSigninreg.trim();
+    lastMail = email
     const password = req.body.passwordSiginreg
   
     try {
@@ -98,6 +100,23 @@ app.post('/sigin-regform', async (req, res) => {
         res.sendStatus(500);
     }
 
+    res.redirect('/signinstep-2.html')
+});
+
+// final mail
+app.get('/plans', function (req, res) {
+    res.contentType('.html');
+    res.sendFile(path.join(__dirname, '../Front-end/plans.html'));
+});
+  
+app.post('/plans', (req, res) => {
+    const mailOptions = {
+        from: 'narutotestmail@gmail.com',
+        to: lastMail,
+        subject: 'Your Netflix Clone Plan is Active! Enjoy Unlimited Streaming!',
+        text: `Dear [User],\nCongratulations! We are thrilled to inform you that your chosen plan for the Netflix Clone service has been successfully activated. You now have full access to our extensive collection of movies, TV shows, and exclusive content.\nWith our Netflix Clone, you can indulge in hours of entertainment, discover new favorites, and enjoy uninterrupted streaming anytime, anywhere. Whether you're a fan of thrilling dramas, hilarious comedies, or captivating documentaries, we have something for everyone.\nSo, grab your popcorn, sit back, and immerse yourself in the world of unlimited entertainment. Explore different genres, create personalized watchlists, and dive into binge-worthy series that will keep you hooked.\nIf you have any questions, concerns, or need assistance with your account, our dedicated support team is always ready to help. Feel free to reach out to us at support@netflix-clone.com.\nThank you for choosing Netflix Clone. We hope you have an incredible streaming experience!\n\nBest regards,\nThe Netflix Clone Team\n`
+    };
+    sendEmail(mailOptions);
     res.redirect('/signinstep-2.html')
 });
 
